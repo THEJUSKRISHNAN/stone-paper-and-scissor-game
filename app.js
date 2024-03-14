@@ -3,9 +3,11 @@ let compScore = 0;
 
 let users= document.querySelector('#user-score');
 let comps= document.querySelector('#comp-score');
+let reset=document.querySelector('#reset');
 
 let choices = document.querySelectorAll('.choice');
 const mesg =document.querySelector('#msg');
+
 
 const genComputerChoice=()=>
 {
@@ -20,7 +22,6 @@ const showwinner=(userWin,userChoice,compChoice)=>{
     {
         console.log("you win");
         mesg.innerText=`You Win ! Your ${userChoice} beats ${compChoice}`;
-        mesg.style.backgroundColor="green";
         userScore=userScore+1;
         users.innerText=userScore;
 
@@ -30,7 +31,6 @@ const showwinner=(userWin,userChoice,compChoice)=>{
     {
         console.log("computer win");
         mesg.innerText=`You Loose.  ${compChoice} beats your ${userChoice}`;
-        mesg.style.backgroundColor="red";
         compScore=compScore+1;
         comps.innerText=compScore;
     }
@@ -47,7 +47,6 @@ const playGame=(userChoice)=> {
    {
         console.log("draw");
         mesg.innerText="Game was draw,Play again";
-        mesg.style.backgroundColor="#081b31";
    }
    else
    {
@@ -82,3 +81,11 @@ choices.forEach((choice) =>
         playGame(userChoice);
     });
 });
+
+reset.addEventListener('click',()=> {
+    users.innerText=0;
+    comps.innerText=0;
+    userScore = 0;
+    compScore = 0;
+    mesg.innerText="Play your move";
+})

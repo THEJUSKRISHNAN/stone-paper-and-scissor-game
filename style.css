@@ -38,7 +38,7 @@ img {
     justify-content: center;
     align-items: center;
     gap: 3rem;
-    margin-top: 5rem;
+    margin-top: 4rem;
 }
 
 .score-board {
@@ -54,8 +54,17 @@ img {
     font-size: 4rem;
 
 }
+#reset:hover {
+    cursor: pointer;
+
+}
 
 #msg {
+    color: #081b31;
+    font-size: 2rem;
+    display: inline;
+}
+#reset  {
     background-color: #081b31;
     color: white;
     font-size: 2rem;
@@ -63,7 +72,36 @@ img {
     padding: 1rem;
     border-radius: 1rem;
 }
-
 .msg-container {
-    margin-top: 5rem;
+    margin-top: 4rem;
+}
+.reset {
+    margin: 4rem 0;
+}
+
+
+
+@media(max-width:600px) {
+    .choice {
+        height: 70px;
+        width: 70px;
+        
+    }
+    img {
+        height: 60px;
+        width: 60px;
+    }
+
+    .score-board {
+        font-size: 1rem;
+        gap: 3rem;
+    }
+    #user-score, #comp-score {
+        font-size: 2rem;
+    
+    }
+    #msg,#reset {
+        font-size: 1rem;
+    }
+    
 }
